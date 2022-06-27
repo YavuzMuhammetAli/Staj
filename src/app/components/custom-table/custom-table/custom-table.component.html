@@ -1,0 +1,25 @@
+<div class="col-sm-8 mx-auto" style="padding: 1rem;width: 50%;">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col" *ngFor="let item of columns">{{item}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of data | slice: (page-1) * pageSize : page * pageSize" (click)="(item.id !== edit) ? Details(item) : (0);" style="cursor: pointer">
+      <td *ngFor="let column of columns ng">
+        <span *ngIf="column!=='action'"> {{item[column]}}</span>
+          <div *ngIf="column=='action'" class="btn-group">
+              <button type="button" class="btn btn-warning" (click)="buttonEvent(item)">Sil</button>
+          </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="mt-3 row justify-content-md-end">
+    <ngb-pagination
+  [(page)]="page"
+  [pageSize]="pageSize"
+  [collectionSize]="data.length"></ngb-pagination>
+  </div>
+</div>
