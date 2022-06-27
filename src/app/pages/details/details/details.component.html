@@ -1,14 +1,17 @@
 <div class="container mt-3 text-center" *ngIf="load else loaded">
   Loading ...
 </div>
-
 <ng-template #loaded>
-
-  <div style="display: flex;">
-
-    <app-custom-table [data] = "postList", [columns] = "postColumns">
-
+  <div><h2>User Name: {{user.name}}</h2></div>
+  <table>
+    <tr>
+  <td>
+    <img  class="img-thumbnail" src="https://picsum.photos/500">
+  </td>
+  <td style="height: 100px;">
+    <app-custom-table [data] = "postList" [columns] = "postColumns">
     </app-custom-table>
-
-  </div>
+  </td>
+  </tr>
+  </table>
 </ng-template>
