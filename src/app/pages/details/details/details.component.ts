@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Post } from 'src/app/models/post';
 import { user } from 'src/app/models/user';
@@ -12,7 +13,7 @@ import { UserService } from 'src/app/services/user/user.service';
 export class DetailsComponent implements OnInit {
   load: boolean = true;
   user = {} as user;
-  postColumns: string[]=[];
+  postColumns: string[]=['id','title','body'];
   postList: Post[]=[];
   constructor(
     private userService: UserService,
@@ -35,7 +36,7 @@ export class DetailsComponent implements OnInit {
     });
     this.userService.getAllPosts(id).subscribe(value => {
       this.postList = value
-      this.postColumns = Object.keys(this.postList[0]);
+      this.postColumns
       this.load = false
     });
   }

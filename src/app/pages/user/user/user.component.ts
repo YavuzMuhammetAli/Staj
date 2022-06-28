@@ -9,8 +9,10 @@ import { UserService } from 'src/app/services/user/user.service';
 })
 export class UserComponent implements OnInit {
 
+  userListSearch : user []=[]
   userList: user[] = []
   userColumns: string[] = []
+  searchText="";
 
   constructor(private userService: UserService) { }
 
@@ -26,12 +28,25 @@ export class UserComponent implements OnInit {
       this.userList = res
       this.userColumns = Object.keys(this.userList[0])
       this.userColumns.push('action')
+      this.userListSearch =res;
     })
   }
 
 
   DeleteUser(user: user) {
     this.userList=this.userList.filter(x => x.id !== user.id)
+    this.userListSearch=this.userList;
+  }
+
+  Search(){
+    this.userListSearch = this.userList.filter(user =>{
+      if(user.name.toLowerCase().includes(this.searchText.toLowerCase())) return true;
+      if(user.username.toLowerCase().includes(this.searchText.toLowerCase())) return true;
+      if(user.email.toLowerCase().includes(this.searchText.toLowerCase())) return true;
+      if(user.phone.toLowerCase().includes(this.searchText.toLowerCase())) return true;
+      if(user.website.toLowerCase().includes(this.searchText.toLowerCase())) return true;
+      return false;
+    })
   }
 
 }

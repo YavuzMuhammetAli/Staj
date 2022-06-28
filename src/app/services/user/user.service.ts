@@ -11,8 +11,6 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  //observable observer subscriber
-
   getAllUsers() {
     return this.http.get<user[]>('https://jsonplaceholder.typicode.com/users').pipe(
       tap({

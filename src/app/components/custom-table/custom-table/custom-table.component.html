@@ -7,7 +7,7 @@
   </thead>
   <tbody>
     <tr *ngFor="let item of data | slice: (page-1) * pageSize : page * pageSize" (click)="(item.id !== edit) ? Details(item) : (0);" style="cursor: pointer">
-      <td *ngFor="let column of columns ng">
+      <td *ngFor="let column of columns">
         <span *ngIf="column!=='action'"> {{item[column]}}</span>
           <div *ngIf="column=='action'" class="btn-group">
               <button type="button" class="btn btn-warning" (click)="buttonEvent(item)">Sil</button>

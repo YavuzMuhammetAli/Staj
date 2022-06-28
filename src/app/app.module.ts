@@ -12,6 +12,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UpdateComponent } from './pages/update/update/update.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { DetailsComponent } from './pages/details/details/details.component';
+import { Ng2OrderModule } from 'ng2-order-pipe';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,10 @@ import { DetailsComponent } from './pages/details/details/details.component';
     ReactiveFormsModule,
     HttpClientModule,
     NgbModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    Ng2OrderModule,
+    NgxPaginationModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
