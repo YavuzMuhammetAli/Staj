@@ -7,7 +7,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CustomTableComponent } from './components/custom-table/custom-table/custom-table.component';
 import { UserComponent } from './pages/user/user/user.component';
-import { NavbarComponent } from './components/navbar/navbar/navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UpdateComponent } from './pages/update/update/update.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
@@ -19,7 +18,6 @@ import { NgxPaginationModule } from 'ngx-pagination';
   declarations: [
     AppComponent,
     UserComponent,
-    NavbarComponent,
     CustomTableComponent,
     UpdateComponent,
     DetailsComponent
