@@ -13,6 +13,9 @@ export class UserComponent implements OnInit {
   userList: user[] = []
   userColumns: string[] = []
   searchText="";
+  editUser = {} as user;
+  edit: number = -1;
+  users:user[]=[]
 
   constructor(private userService: UserService) { }
 
@@ -48,5 +51,4 @@ export class UserComponent implements OnInit {
       return false;
     })
   }
-
 }
